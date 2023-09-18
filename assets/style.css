@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none !important;
+}
+._0body{
+    background-color: #44AEC2;
+}
+._0bit{
+    margin-top: 50vh;
+    font-size:4rem;
+}
+._0pic{
+    width: auto;
+    height: 200px;
+    background:
+    linear-gradient(to right, white 4px, transparent 4px) 0 0,
+    linear-gradient(to right, white 4px, transparent 4px) 0 100%,
+    linear-gradient(to left, white 4px, transparent 4px) 100% 0,
+    linear-gradient(to left, white 4px, transparent 4px) 100% 100%,
+    linear-gradient(to bottom, white 4px, transparent 4px) 0 0,
+    linear-gradient(to bottom, white 4px, transparent 4px) 100% 0,
+    linear-gradient(to top, white 4px, transparent 4px) 0 100%,
+    linear-gradient(to top, white 4px, transparent 4px) 100% 100%;
+
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  border-radius: 10px !important;
+}  
+._0id{
+    color: #93EFED;
+} 
+._0scan{
+    padding: 10px 0px 10px 0px;
+    color: white;
+    background-color: #362999 !important;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+._0ne{
+    font-size: 13px;
+}
+._0syn{
+    color: #4262C5;
+}
+._0op{
+    color: white;
+    background-color: #44AEC2;
+    border-radius: 10px;
+}
+._0foot{
+    background-image: url('./images/foot.svg');
+    height: 150vh;
+    background-repeat: no-repeat;
+    margin-top: 80px;
+}
+._0add{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: auto;
+    border-radius: 50%;
+}
