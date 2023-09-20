@@ -12,7 +12,7 @@
 }
 ._0pic{
     width: auto;
-    height: 200px;
+    height: 350px;
     background:
     linear-gradient(to right, white 4px, transparent 4px) 0 0,
     linear-gradient(to right, white 4px, transparent 4px) 0 100%,
@@ -51,9 +51,9 @@
 }
 ._0foot{
     background-image: url('./images/foot.svg');
-    height: 150vh;
     background-repeat: no-repeat;
-    margin-top: 80px;
+    margin-bottom: 0;
+    /* margin-top: 80px; */
 }
 ._0add{
     width: 100px;
