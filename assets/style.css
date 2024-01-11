@@ -1,64 +1,34 @@
 *{
     padding: 0;
     margin: 0;
-    text-decoration: none !important;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
+.full{width:100%;height: 100%;}
+.center{display:flex;align-items: center;justify-content: center;}
 ._0body{
     background-color: #44AEC2;
 }
-._0bit{
-    margin-top: 50vh;
-    font-size:4rem;
+._0section {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;left: 0px;
 }
-._0pic{
-    width: auto;
-    height: 350px;
-    background:
-    linear-gradient(to right, white 4px, transparent 4px) 0 0,
-    linear-gradient(to right, white 4px, transparent 4px) 0 100%,
-    linear-gradient(to left, white 4px, transparent 4px) 100% 0,
-    linear-gradient(to left, white 4px, transparent 4px) 100% 100%,
-    linear-gradient(to bottom, white 4px, transparent 4px) 0 0,
-    linear-gradient(to bottom, white 4px, transparent 4px) 100% 0,
-    linear-gradient(to top, white 4px, transparent 4px) 0 100%,
-    linear-gradient(to top, white 4px, transparent 4px) 100% 100%;
-
-  background-repeat: no-repeat;
-  background-size: 20px 20px;
-  border-radius: 10px !important;
-}  
-._0id{
-    color: #93EFED;
-} 
-._0scan{
-    padding: 10px 0px 10px 0px;
-    color: white;
-    background-color: #362999 !important;
-    outline: none;
-    border: none;
-    border-radius: 10px;
+._0progress {
+    width: calc(100% - 60px);max-width: 250px;
+    min-height: 20px;font-size: 15px;
+    border-radius: 5px;border:2px solid  rgba(255, 255, 255,.6);
+    display: flex;overflow: hidden;color: #fff;
 }
-._0ne{
-    font-size: 13px;
+._0progress ._0{
+    width: 100%; 
 }
-._0syn{
-    color: #4262C5;
+._0progress ._0 div{
+    width:0px;background: rgba(255, 255, 255,.6);height: 100%;
+    transition: all 300ms;
 }
-._0op{
-    color: white;
-    background-color: #44AEC2;
-    border-radius: 10px;
-}
-._0foot{
-    background-image: url('./images/foot.svg');
-    background-repeat: no-repeat;
-    margin-bottom: 0;
-    /* margin-top: 80px; */
-}
-._0add{
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    margin: auto;
-    border-radius: 50%;
+._0progress ._1{
+    width: 100%;height: 100%;
+    margin-left: -100%;display: flex;align-items: center;
+    padding: 5px 0px;justify-content: center;
 }
