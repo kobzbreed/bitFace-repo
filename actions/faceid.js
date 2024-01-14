@@ -2,7 +2,7 @@
    TO HANDLE FACIAL RECOGNITION
    AND THE REST
 */
-
+let id = "";
 //setting up
 (async () => {
     await faceapi.loadSsdMobilenetv1Model(_face_models)
@@ -22,10 +22,11 @@
     setUpCamera()
 })()
 
+//camera setup
 const setUpCamera = () => {
     const video = document.createElement('video');
     const canvas = document.createElement('canvas');
-    video.autoplay = true
+    video.autoplay = true;video.muted = true
     const ctx = canvas.getContext('2d');
 
     //parametres
@@ -36,8 +37,9 @@ const setUpCamera = () => {
     navigator.mediaDevices.getUserMedia({ video: { width: 1280, height: 720 } })
         .then(stream => {
             video.srcObject = stream;
-
-            video.onloadeddata = () => { resizeFun(); draw() }
+            video.onloadeddata = () => { resizeFun(); draw();}
+            //canvas.onclick = () =>{video.play();video.muted = true; } //Testing purposes
+            //video.onended = () => {video.play()}
             //draw the canvas in the div
             E('face_id_section').innerHTML = ""
             E('face_id_section').appendChild(canvas)
@@ -51,9 +53,10 @@ const setUpCamera = () => {
                     ctx.scale(-1, 1);
                     ctx.drawImage(video, Math.round((fw - canvas.width) / 2), 0, fw * -1, fh);
                     ctx.restore();
+                    faceEngine(video, canvas)
                     draw();
-                    //}, 2000);
-                });
+                    }, 2);
+                //});
             }
         })
         .catch(error => {
@@ -75,5 +78,16 @@ const setUpCamera = () => {
         fh = video.videoHeight * ct
 
 
+    }
+}
+//facial recognition engine
+const faceEngine = async(video) => { 
+    const faces = await faceapi.detectAllFaces(video).withFaceLandmarks().withFaceDescriptors()
+    if(faces.length == 1) {
+        id =  talk('Face detected', 'good', id)
+    }
+    else if(faces.length > 1) {
+       //multiple faces are present
+       id =  talk('Multiple faces present', 'fail', id)
     }
 }

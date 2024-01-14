@@ -39,8 +39,7 @@ const setProgressOptions = (params = {}) => {
     else if(type == "warn") {params.color = "rgba(255, 161, 1, .8)"; params.class='fas fa-info'}
     if(id != "") {
         //performing modifications
-        E(id).style.color = params.color
-        E(id).style.borderColor = params.color
+        E(id).style.background = params.color
         E('talk_msg' + id).innerHTML = msg
         E('talk_icon' + id).classList = params.class
         E('talk_loader' + id).style.width = pgress + '%'
@@ -62,9 +61,9 @@ const setProgressOptions = (params = {}) => {
             </style>
             <div style='position:fixed;top:0px;left:0px;width:100vw;height:0px;display:flex;align-items:flex-start;z-index:1500'>
                 <div id='${id}' style='margin-left:auto;margin-right:auto;margin-top:40px;background:${params.color};display:flex;overflow:hidden;
-                border-radius:5px;color:#fff;font-size:17px;box-shadow:0 0 3px 1px rgba(0,0,0,.05)'>
+                border-radius:5px;font-size:17px;box-shadow:0 0 3px 1px rgba(0,0,0,.05);transition:all 400ms'>
                 <div style='padding:8px 10px;text-align:center;z-index:2'><span id='talk_icon${id}' class='${params.class}' style='margin-right:5px'></span>
-                <span id='talk_msg${id}' style='margin-right:5px'>${msg}</span></div>
+                <span id='talk_msg${id}' style='margin-right:5px;color:#fff;'>${msg}</span></div>
                 <div name='loader' style='margin-left:-100%;width:100%'><div id='talk_loader${id}' style='transition:all 200ms;background:linear-gradient(to right, #FFA500, #FF4500, #FF0000); width:${pgress}%;height:100%'></div></div>
                 </div></div></div>
         `
